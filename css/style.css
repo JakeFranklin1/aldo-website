@@ -1,4 +1,4 @@
-/* Basic Reset & Body Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +6,10 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif; /* Consider using a more modern font like Montserrat or Open Sans */
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
 img {
@@ -29,34 +29,32 @@ ul {
 
 header {
     background-color: transparent;
-    position: fixed; /* Change from absolute to fixed */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 25px 0;
     z-index: 100;
-    transition: all 0.4s ease-in-out; /* Add transition for smooth animation */
+    transition: all 0.4s ease-in-out;
 }
 
-/* New scrolled header state */
 header.scrolled {
     background-color: rgba(255, 255, 255, 0.95);
-    padding: 12px 20px; /* Add horizontal padding inside */
+    padding: 12px 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 100px; /* Rounded corners on all sides */
-    width: 50%; /* Narrow width as requested */
-    left: 25%; /* Center the header (100% - 50%)/2 = 25% */
-    margin-top: 10px; /* Add some space from the top */
+    border-radius: 100px;
+    width: 50%;
+    left: 25%;
+    margin-top: 10px;
 }
 
 .header-container {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
-    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all 0.3s ease-in-out; /* Add transition */
+    transition: all 0.3s ease-in-out;
 }
 
 header.scrolled .header-container {
@@ -66,7 +64,7 @@ header.scrolled .header-container {
 
 .logo img {
     height: 60px;
-    transition: height 0.3s ease-in-out; /* Transition for logo resizing */
+    transition: height 0.3s ease-in-out;
 }
 
 nav ul {
@@ -81,13 +79,13 @@ nav li {
 nav a {
     font-weight: 600;
     font-size: 14px;
-    color: #1c294a; /* Dark blue to match your brand */
+    color: #1c294a;
     text-transform: uppercase;
     transition: color 0.3s ease;
-    position: relative; /* For hover effect */
+    position: relative;
 }
 
-/* Add underline hover effect */
+
 nav a::after {
     content: '';
     position: absolute;
@@ -107,16 +105,17 @@ nav a:hover::after {
     display: flex;
     align-items: center;
     font-size: 14px;
-    color: #1c294a;
+    color: #ffffff;
     transition: all 0.3s ease-in-out;
 }
 
 
 .header-contact span {
     margin-right: 15px;
+    font-size: 16px;
 }
 
-/* LinkedIn icon styling */
+
 .header-contact a {
     display: flex;
     align-items: center;
@@ -129,45 +128,64 @@ nav a:hover::after {
 
 .header-contact .fab {
     font-size: 24px;
-    color: #1c294a;
+    color: #ffffff;
     margin-left: 15px;
 }
 
-/* Make sure the icon adjusts when the header is scrolled */
+
 header.scrolled .header-contact .fab {
     font-size: 24px;
+    color: #1c294a;
+}
+
+header.scrolled .header-contact span {
+    color: #1c294a;
 }
 
 #hero {
     position: relative;
-    min-height: 650px; /* Increase height to add more space for wave */
-    padding: 120px 0 240px 0; /* Increase bottom padding to create more space before the wave */
+    min-height: 650px;
+    padding: 0;
     overflow: visible;
     background-color: #fff;
+    display: flex;
+    align-items: center;
 }
 
 .hero-content {
-    max-width: 500px; /* Control width */
+    max-width: 620px;
     width: 100%;
-    padding-top: 60px; /* Push content down to account for header */
     position: relative;
     z-index: 2;
-    margin-left: 10%; /* Add left margin to push content right from the edge */
+    margin-left: 10%;
+    padding: 120px 0;
 }
 
 .hero-content h1 {
-    font-size: 42px;
+    font-size: var(--font--size-large2);
     font-weight: 700;
     line-height: 1.2;
-    color: #1c294a; /* Dark blue */
+    color: #1c294a;
     margin-bottom: 20px;
+}
+
+.hero-content h1 .primary-heading {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.hero-content h1 .secondary-heading {
+    font-weight: 400;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .hero-content p {
     font-size: 18px;
     margin-bottom: 30px;
     color: #555;
-    max-width: 450px; /* Control paragraph width */
+    max-width: 450px;
 }
 
 .hero-content strong {
@@ -193,29 +211,32 @@ header.scrolled .header-contact .fab {
 }
 
 .hero-image {
-    position: absolute;
     top: 0;
     right: 0;
-    width: 55%;
     height: 100%;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-image img {
-    height: auto;
-    object-fit: cover;
+    max-height: 90%;
+    width: auto;
+    object-fit: contain;
     position: relative;
     z-index: 3;
 }
 
-/* About Us Section Styles */
+
 #about {
-    background-color: #1c294a; /* Dark blue background */
+    background-color: #1c294a;
     color: #fff;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 100px;
     padding-bottom: 80px;
     position: relative;
+    margin-top: 0;
 }
 
 #about h2 {
@@ -276,7 +297,45 @@ header.scrolled .header-contact .fab {
     margin: 0 20px 20px;
 }
 
-/* Add this to your style.css */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1c294a;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    animation: bounce 2s infinite;
+    z-index: 5;
+}
+
+.scroll-indicator:after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin-top: 8px;
+    border-right: 2px solid #1c294a;
+    border-bottom: 2px solid #1c294a;
+    transform: rotate(45deg);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}
+
 .wave-divider {
     position: absolute;
     bottom: 0;
@@ -285,11 +344,12 @@ header.scrolled .header-contact .fab {
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
+    margin-bottom: -1px;
 }
 
 .wave-divider svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 60px;
+    height: 80px;
 }

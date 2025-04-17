@@ -17,4 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Check on page load (in case page refreshes while scrolled)
     checkScroll();
+
+    
 });
