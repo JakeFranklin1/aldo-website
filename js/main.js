@@ -146,6 +146,35 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+    
+    const backToTopButton = document.getElementById('back-to-top');
+    const heroSection = document.getElementById('hero');
+
+    function toggleBackToTopButton() {
+        // Get the height of the hero section
+        const heroHeight = heroSection.offsetHeight;
+
+        // Check if we've scrolled past the hero section
+        if (window.scrollY > heroHeight) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    }
+
+    // Check on initial load
+    toggleBackToTopButton();
+
+    // Listen for scroll events
+    window.addEventListener('scroll', toggleBackToTopButton);
+
+    // Scroll to top when clicked
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 
     // Check for elements to reveal on initial load and scroll
     checkReveal();

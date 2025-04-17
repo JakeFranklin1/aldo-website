@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 
 * {
     margin: 0;
@@ -78,7 +81,7 @@ nav li {
 
 nav a {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     color: #1c294a;
     text-transform: uppercase;
     transition: color 0.3s ease;
@@ -140,6 +143,10 @@ header.scrolled .header-contact .fab {
 
 header.scrolled .header-contact span {
     color: #1c294a;
+}
+
+header.scrolled nav a {
+    font-size: 14px;
 }
 
 header.scrolled .logo img {
@@ -739,5 +746,56 @@ header.scrolled .logo img {
 
     .currency, .percent, .plus {
         font-size: 36px;
+    }
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #1c294a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: linear-gradient(135deg, #1c294a 0%, #4169E1 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover i {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
     }
 }
