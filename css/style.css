@@ -243,6 +243,9 @@ header.scrolled .logo img {
 
 /* Updated About Us section styling */
 #about {
+    max-width: 85%;
+    margin: 0 auto;
+    border-radius: 12px;
     background-color: #1c294a;
     color: #fff;
     text-align: center;
@@ -798,4 +801,774 @@ header.scrolled .logo img {
         bottom: 20px;
         right: 20px;
     }
+}
+
+/* ... existing styles ... */
+
+#industries {
+    max-width: 85%;
+    margin: 0 auto;
+    border-radius: 12px;
+    position: relative;
+    padding: 120px 0 100px;
+    color: #1c294a;
+    overflow: hidden;
+    margin-bottom: 120px;
+    background: #fff;
+}
+
+.industries-bg-gradient {
+    display: none; /* Remove the background gradient */
+}
+
+.industries-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#industries .section-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+#industries h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1c294a;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+#industries h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #4169E1, #6A98FF);
+}
+
+#industries .section-intro {
+    max-width: 700px;
+    margin: 30px auto 0;
+    color: #555;
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+/* Industry Filter Buttons */
+.industry-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filter-btn {
+    background: rgba(28, 41, 74, 0.05);
+    border: none;
+    color: #1c294a;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(65, 105, 225, 0.1), transparent);
+    transition: left 0.7s ease;
+}
+
+.filter-btn:hover {
+    background: rgba(28, 41, 74, 0.1);
+    color: #1c294a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn:hover::before {
+    left: 100%;
+}
+
+.filter-btn.active {
+    background: linear-gradient(90deg, #4169E1, #6A98FF);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(65, 105, 225, 0.2);
+}
+
+/* Industry Cards Container */
+.industry-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+/* Industry Card */
+.industry-card {
+    height: 500px;
+    perspective: 2000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.industry-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-front {
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-image {
+    height: 65%;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.industry-card:hover .card-image img {
+    transform: scale(1.03); /* Reduced from 1.05 to 1.03 */
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(28, 41, 74, 0.2), rgba(28, 41, 74, 0.7));
+    z-index: 1;
+}
+
+.card-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(90deg, #4169E1, #6A98FF);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    padding: 25px;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.card-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1c294a;
+}
+
+.card-content p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-cta {
+    display: flex;
+    align-items: center;
+    color: #4169E1;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.card-cta i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.industry-card:hover .card-cta {
+    color: #6A98FF;
+}
+
+.industry-card:hover .card-cta i {
+    transform: translateX(3px); /* Reduced from 5px to 3px */
+}
+
+/* Card Back */
+.card-back {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    padding: 30px;
+}
+
+.card-back-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-back h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1c294a;
+}
+
+.card-back p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Expertise List */
+.expertise-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.expertise-list li {
+    display: flex;
+    margin-bottom: 20px;
+    background: rgba(65, 105, 225, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.expertise-list li:hover {
+    background: rgba(65, 105, 225, 0.1);
+    transform: translateX(3px); /* Reduced from 5px to 3px */
+}
+
+.expertise-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #4169E1, #6A98FF);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(65, 105, 225, 0.2);
+}
+
+.expertise-icon i {
+    font-size: 20px;
+    color: #fff;
+}
+
+.expertise-details {
+    flex-grow: 1;
+}
+
+.expertise-details h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1c294a;
+}
+
+.expertise-details p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Industry Metrics */
+.industry-metrics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(28, 41, 74, 0.1);
+}
+
+.metric {
+    text-align: center;
+    width: 48%;
+}
+
+.metric-chart {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+}
+
+.circular-chart {
+    display: block;
+    max-width: 100%;
+    max-height: 250px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: rgba(28, 41, 74, 0.1);
+    stroke-width: 2.8;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    stroke: #4169E1;
+    animation: progress 1.5s ease-out forwards;
+    transform-origin: center;
+}
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+}
+
+.percentage {
+    fill: #fff;
+    font-size: 0.5em;
+    text-anchor: middle;
+    font-weight: 600;
+}
+
+.metric span {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Back Button */
+.back-to-front {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.back-to-front i {
+    margin-right: 8px;
+}
+
+.back-to-front:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Global Talent Network */
+.talent-network {
+    z-index: 10;
+    margin-top: 80px;
+    background: rgba(28, 41, 74, 0.03);
+    border-radius: 20px;
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.talent-network::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(65, 105, 225, 0.03) 0%, rgba(65, 105, 225, 0) 100%);
+    z-index: -1;
+}
+
+.network-info h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1c294a;
+}
+
+.network-info p {
+    color: #444;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.network-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.network-stat {
+    text-align: center;
+    flex: 1;
+}
+
+.stat-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #4169E1, #6A98FF);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    box-shadow: 0 10px 20px rgba(65, 105, 225, 0.2);
+}
+
+.stat-icon i {
+    font-size: 28px;
+    color: #fff;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    background: linear-gradient(90deg, #4169E1, #6A98FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    color: #555;
+    font-size: 14px;
+}
+
+/* Network Visualization Elements */
+.network-node {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #4169E1;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #4169E1;
+    animation: pulse 3s infinite alternate;
+}
+
+.network-connection {
+    position: absolute;
+    height: 1px;
+    transform-origin: left center;
+    background: linear-gradient(90deg, #4169E1, transparent);
+    opacity: 0.3;
+    animation: fade 5s infinite alternate;
+}
+
+.network-visualization-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.network-globe {
+    width: 400px;
+    height: 400px;
+    background-image: url('assets/globe-network.png');
+    background-size: cover;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Network Visualization */
+.network-visualization {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .industry-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .talent-network {
+        padding: 40px;
+    }
+
+    .network-globe {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    .talent-network {
+        grid-template-columns: 1fr;
+    }
+
+    .network-visualization-container {
+        order: -1;
+    }
+
+    .network-globe {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    #industries {
+        padding: 80px 0 60px;
+    }
+
+    #industries h2 {
+        font-size: 36px;
+    }
+
+    #industries .section-intro {
+        font-size: 16px;
+    }
+
+    .filter-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .industry-cards-container {
+        gap: 30px;
+    }
+
+    .industry-card {
+        height: 450px;
+    }
+
+    .card-content h3 {
+        font-size: 20px;
+    }
+
+    .card-content p {
+        font-size: 14px;
+    }
+
+    .talent-network {
+        padding: 30px;
+    }
+
+    .network-info h3 {
+        font-size: 28px;
+    }
+
+    .network-info p {
+        font-size: 16px;
+    }
+
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .stat-icon i {
+        font-size: 24px;
+    }
+
+    .stat-number {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .industry-cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+    }
+
+    .industry-card {
+        height: 400px;
+    }
+
+    .network-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .network-stat {
+        margin-bottom: 20px;
+    }
+
+    .talent-network {
+        padding: 20px;
+    }
+}/* Card flip essential styles */
+.industry-card {
+    perspective: 2000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.industry-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.card-front {
+    z-index: 2;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* Network Visualization Elements */
+.network-node {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #4169E1;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #4169E1;
+    animation: pulse 3s infinite alternate;
+}
+
+.network-connection {
+    position: absolute;
+    height: 1px;
+    transform-origin: left center;
+    background: linear-gradient(90deg, #4169E1, transparent);
+    opacity: 0.3;
+    animation: fade 5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Essential card flip styles */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    z-index: 2;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.industry-card.flipped .card-inner {
+    transform: rotateY(180deg);
 }
