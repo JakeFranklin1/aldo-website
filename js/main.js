@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Animate the Why Choose Us statistics
     function animateWhyChooseStats() {
-        const statElements = document.querySelectorAll('#why-choose-us .stat-number');
+        const statElements = document.querySelectorAll('#why-choose-us .stat-number-wcu');
 
         statElements.forEach(stat => {
             const target = parseInt(stat.getAttribute('data-count'));
