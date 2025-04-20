@@ -239,9 +239,7 @@ header.scrolled .logo img {
     z-index: 3;
 }
 
-/* ...existing code... */
-
-/* Updated About Us section styling */
+/* About Us */
 #about {
     max-width: 85%;
     margin: 0 auto;
@@ -255,7 +253,7 @@ header.scrolled .logo img {
     overflow: hidden;
 }
 
-/* Remove the previous wave effects */
+
 #about::before,
 #about::after {
     display: none;
@@ -301,8 +299,6 @@ header.scrolled .logo img {
     line-height: 1.7;
 }
 
-
-/* New card layout with 3D flip effect */
 .about-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -491,7 +487,6 @@ header.scrolled .logo img {
     transform: translateY(0);
 }
 
-/* ...existing code... */
 
 .scroll-indicator {
     position: absolute;
@@ -659,6 +654,10 @@ header.scrolled .logo img {
 .stat-subtitle {
     font-size: 14px;
     color: #666;
+}
+
+.stat-number-wcu {
+    font-size: 44px;
 }
 
 /* Buttons */
@@ -1270,7 +1269,7 @@ header.scrolled .logo img {
 .talent-network {
     z-index: 10;
     margin-top: 80px;
-    background: rgba(28, 41, 74, 0.03);
+    background: rgba(109, 109, 109, 0.1);
     border-radius: 20px;
     padding: 60px;
     display: grid;
@@ -1278,23 +1277,12 @@ header.scrolled .logo img {
     gap: 40px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.05);
     -webkit-backdrop-filter: blur(5px);
     -moz-backdrop-filter: blur(5px);
     -ms-backdrop-filter: blur(5px);
     -o-backdrop-filter: blur(5px);
-}
-
-.talent-network::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(65, 105, 225, 0.03) 0%, rgba(65, 105, 225, 0) 100%);
-    z-index: -1;
+    backdrop-filter: blur(5px);
 }
 
 .network-info h3 {
