@@ -500,6 +500,16 @@ header {
     color: #4169E1;
 }
 
+@media (max-width: 1250px) {
+    .process-item {
+        margin-left: 20px;
+    }
+    .process-timeline::before {
+        left: 20px;
+    }
+
+}
+
 /* Responsive adjustments for new sections */
 @media (max-width: 992px) {
     .case-details {
@@ -517,16 +527,16 @@ header {
     }
 
     .process-timeline::before {
-        left: 20px;
+        bottom: 130px;
     }
 
-    .process-icon {
-        width: 40px;
-        height: 40px;
+    .service-benefits {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
-    .process-icon i {
-        font-size: 18px;
+    .service-hero h1 {
+        font-size: 42px;
     }
 }
 
@@ -539,32 +549,15 @@ header {
         padding: 20px;
     }
 
-    .process-icon {
-        width: 40px;
-        height: 40px;
+    .header-contact {
+        display: none;
     }
 
-    .process-icon i {
-        font-size: 16px;
-    }
 
     .faq-item {
         padding: 20px;
     }
-}
 
-@media (max-width: 992px) {
-    .service-benefits {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .service-hero h1 {
-        font-size: 42px;
-    }
-}
-
-@media (max-width: 768px) {
     .service-hero {
         padding: 100px 0 60px;
     }
@@ -589,6 +582,15 @@ header {
         font-size: 18px;
     }
 
+    .process-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .process-icon i {
+        font-size: 18px;
+    }
+
     .benefit-icon {
         width: 50px;
         height: 50px;
@@ -609,4 +611,26 @@ header {
     .cta-card p {
         font-size: 16px;
     }
+}
+
+@media (max-width: 500px) {
+
+    .process-icon {
+        display: none;
+    }
+
+    .process-timeline::before {
+        display: none;
+    }
+
+    .process-item {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .process-content {
+        margin-left: 0;
+    }
+
+
 }
