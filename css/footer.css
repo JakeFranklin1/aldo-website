@@ -1,6 +1,6 @@
 /* Footer Styles */
 .site-footer {
-    background: #f8f9fa;
+    background: #eee;
     padding: 60px 0 0;
     position: relative;
     color: #333;
@@ -155,7 +155,7 @@
 
 /* Copyright bar */
 .copyright-bar {
-    background: #f1f3f5;
+    background: #e3e3e3;
     padding: 20px 0;
     text-align: center;
     margin-top: 20px;
