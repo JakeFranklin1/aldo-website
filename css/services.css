@@ -156,3 +156,10 @@
         font-size: 24px;
     }
 }
+
+@media (max-width: 468px) {
+    #services {
+        max-width: 95%;
+
+    }
+}

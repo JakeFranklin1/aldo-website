@@ -360,4 +360,16 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check for elements to reveal on initial load and scroll
     checkReveal();
     window.addEventListener('scroll', checkReveal);
+
+    if (window.innerWidth <= 768) {
+        document.querySelectorAll('.flip-card').forEach(function(card) {
+          const front = card.querySelector('.flip-card-front');
+          front.addEventListener('click', function() {
+            card.classList.toggle('active');
+            document.querySelectorAll('.flip-card').forEach(function(other) {
+              if (other !== card) other.classList.remove('active');
+            });
+          });
+        });
+      }
 });

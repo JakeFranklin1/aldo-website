@@ -412,8 +412,8 @@ address {
 @media (max-width: 576px) {
     .contact-method {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: left;
+        text-align: left;
     }
 
     .contact-icon {
@@ -422,10 +422,21 @@ address {
     }
 
     .contact-details {
-        text-align: center;
+        text-align: left;
     }
 
     .social-links {
-        justify-content: center;
+        justify-content: left;
+    }
+}
+
+@media (max-width: 468px) {
+
+    #contact {
+        max-width: 95%;
+    }
+
+    .contact-container {
+        padding: 0;
     }
 }

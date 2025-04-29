@@ -728,7 +728,7 @@ header.scrolled .logo img {
     }
 
     #why-choose-us h2 {
-        font-size: 36px;
+        font-size: 44px;
     }
 
     .stat-value {
@@ -1363,10 +1363,11 @@ header.scrolled .logo img {
 }
 
 .network-visualization-container {
-    position: relative;
+    /* position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+    display: none;
 }
 
 .network-globe {
@@ -1503,11 +1504,6 @@ header.scrolled .logo img {
         height: 400px;
     }
 
-    .network-stats {
-        flex-direction: column;
-        gap: 30px;
-    }
-
     .network-stat {
         margin-bottom: 20px;
     }
@@ -1515,7 +1511,15 @@ header.scrolled .logo img {
     .talent-network {
         padding: 20px;
     }
-}/* Card flip essential styles */
+}
+
+@media (max-width: 468px) {
+
+    #about {
+        max-width: 95%;
+    }
+
+}
 .industry-card {
     perspective: 2000px;
     cursor: pointer;
@@ -1618,3 +1622,83 @@ header.scrolled .logo img {
 .industry-card.flipped .card-inner {
     transform: rotateY(180deg);
 }
+
+/* Accordion style for About Us cards on mobile */
+@media (max-width: 768px) {
+
+    .about-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .flip-card {
+      height: auto;
+      perspective: none;
+    }
+    .flip-card-inner,
+    .flip-card-front,
+    .flip-card-back {
+      position: static !important;
+      width: 100% !important;
+      height: auto !important;
+      transform: none !important;
+      box-shadow: none;
+      border-radius: 10px;
+      transition: none;
+    }
+    .flip-card-front {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background: #fff;
+      color: #1c294a;
+      padding: 15px;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+    }
+    .flip-card-front .card-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+    }
+    .flip-card-front h3 {
+      font-size: 18px;
+      padding: 0;
+      margin: 0;
+      background: none;
+      color: #1c294a;
+    }
+    .flip-card-back {
+      display: none;
+      background: #f8f8f8;
+      color: #1c294a;
+      padding: 15px 15px 20px 90px;
+      border-radius: 0 0 10px 10px;
+      font-size: 15px;
+      text-align: left;
+    }
+    .flip-card.active .flip-card-back {
+      display: block;
+    }
+
+    .flip-card-front::after {
+        content: '\f078';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-left: auto;
+        color: #4169E1;
+        font-size: 18px;
+        transition: transform 0.3s;
+      }
+      .flip-card.active .flip-card-front::after {
+        transform: rotate(180deg);
+      }
+      .flip-card.active .flip-card-front {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      .flip-card.active .flip-card-back {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+  }
